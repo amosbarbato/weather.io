@@ -55,7 +55,7 @@ const App = () => {
 
 								<div className="content-right container">
 									<Highlight weather={weather} />
-									<Forecast data={weather.daily} /> 
+									<Forecast weather={weather} data={weather.daily} /> 
 								</div>
 							</>
 						)}

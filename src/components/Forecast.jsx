@@ -1,6 +1,12 @@
 import '../styles.scss'
 
-export const Forecast = ({data}) => {
+export const Forecast = ({
+	data,
+	weather: {
+		temp_min,
+		temp_max
+	}
+}) => {
 
 	return (
 		<div className="card">
@@ -8,47 +14,17 @@ export const Forecast = ({data}) => {
 				
 				{data.map((d, index) => (
 					<li key={index} className='forecast-item' >
-						<p className="heading-xs">{d.title}</p>	
+						<p className="heading-sm day">{d.title}</p>	
 						
 						<img src={d.icon} alt="" />
-						
-						<p className="heading-sm">{`${d.temp.toFixed()}`}&deg;c</p>
+
+						<div className="temp-max-min">
+							<p className="heading-sm">{`${temp_min.toFixed()}`}&deg;c</p>
+							<p className="heading-sm max">{`${temp_max.toFixed()}`}&deg;c</p>
+						</div>
 					</li>
 				))}
-{/* 
-
-
-
-				<li className="forecast-item">
-					<p className="heading-xs">Ter</p>								
-					<img src="./src/assets/weather-icons/06d.png" alt="" />
-					<p className="heading-sm">25&deg;c</p>
-				</li>
-
-				<li className="forecast-item">
-					<p className="heading-xs">Qua</p>
-					<img src="./src/assets/weather-icons/06d.png" alt="" />
-					<p className="heading-sm">25&deg;c</p>
-				</li>
-
-				<li className="forecast-item">
-					<p className="heading-xs">Qui</p>
-					<img src="./src/assets/weather-icons/06d.png" alt="" />
-					<p className="heading-sm">25&deg;c</p>
-				</li>
-
-				<li className="forecast-item">
-					<p className="heading-xs">Sex</p>
-					<img src="./src/assets/weather-icons/06d.png" alt="" />
-					<p className="heading-sm">25&deg;c</p>
-				</li>
-
-				<li className="forecast-item">
-					<p className="heading-xs">Sab</p>
-					<img src="./src/assets/weather-icons/06d.png" alt="" />
-					<p className="heading-sm">25&deg;c</p>
-				</li> */}
-
+				
 			</ul>
 		</div>
 	)
