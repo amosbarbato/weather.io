@@ -12,7 +12,7 @@ const getWeatherData = (infoType, searchParams) => {
 }
 
 const iconUrlFromCode = (icon) => 
-	`../src/assets/weather-icons/${icon}.png`;
+	`../weather-icons/${icon}.png`;
 
 
 const formatToLocalTime = (
