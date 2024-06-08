@@ -24,7 +24,7 @@ const formatToLocalTime = (
 const formatCurrent = (data) => {
 	const {
 		coord: { lat, lon },
-		main: { feels_like, humidity, temp },
+		main: { feels_like, humidity, temp, temp_min, temp_max },
 		name, 
 		dt, 
 		sys: { country, sunrise, sunset },
@@ -40,6 +40,8 @@ const formatCurrent = (data) => {
 		feels_like,
 		humidity,
 		temp,
+		temp_min,
+		temp_max,
 		name,
 		country,
 		sunrise: formatToLocalTime(sunrise, timezone, 'hh:mm a'),

@@ -34,10 +34,9 @@ export const Header = ({ setQuery }) => {
 					placeholder='Search city...' 
 					className='search-field'
 				/>
-				<MagnifyingGlass 
-					size={30}
-					onClick={handleSearchClick}
-				/>
+				<button onClick={handleSearchClick}>
+					<MagnifyingGlass size={24} color='white'/>
+				</button>
 			</div>
 		</div>
 	)

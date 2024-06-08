@@ -151,9 +151,11 @@ main {
 	display: flex;
 	justify-content: space-between;
 	gap: 1rem;
-	margin-block-end: 1rem;
+	margin-block-end: 1.5rem;
 
 	a.logo {
+		height: 64px;
+
 		img {
 			background-color: var(--gray-600);
 			padding: 12px;
@@ -169,6 +171,9 @@ main {
 
 	.search-view {
 		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
 
 		input {
 			padding: 1.2rem;
@@ -186,15 +191,30 @@ main {
 				font-family: var(--ff-nunito-sans);
 			}
 		}
+
+		button {
+			height: 64px;
+			padding-inline: 20px;
+			outline: none;
+			border: none;
+			background-color: var(--gray-600);
+			border-radius: var(--radius-8);
+			cursor: pointer;
+
+			&:hover {
+				background-color: var(--gray-500);
+				transition: var(--transition-short);
+			}
+		}
 	}
 }
 
 .bg-cold {
-	background-image: linear-gradient(#0891b2, #0791b3);
+	background-image: linear-gradient(#0891b2, #1d4ed8);
 }
 
 .bg-hot {
-	background-image: linear-gradient(#c98904, #c2410c);
+	background-image: linear-gradient(#ca8a04, #c2410c);
 }
 
 .current-weather {
@@ -231,7 +251,6 @@ main {
 		h1,
 		p {
 			margin-left: 20px;
-			text-transform: capitalize;
 		}
 
 		p.weather {
@@ -240,12 +259,25 @@ main {
 		}
 	}
 
+	.temp-max-min {
+		margin-block: 0;
+		text-transform: none;
+	}
+
 	.weather-icon {
-		height: 220px;
-		width: 220px;
+		position: relative;
+		bottom: 150px;
+		right: 64px;
 	}
 }
 
+.sub-wrapper {
+	margin-top: 1rem;
+
+	p {
+		text-transform: capitalize;
+	}
+}
 
 .card > .wrapper {
 	display: block;

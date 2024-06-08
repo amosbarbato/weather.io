@@ -8,7 +8,9 @@ export const CurrentWeather = ({
 		country, 
 		details, 
 		icon,
-		temp
+		temp,
+		temp_min,
+		temp_max,
 	},
 }) => {
 
@@ -22,9 +24,15 @@ export const CurrentWeather = ({
 			<div className="wrapper">
 				<div className="weather">
 					<h1 className='heading-xl weather'>{`${temp.toFixed()}`}&deg;c</h1>
-					<p className='text-lg weather'>{details}</p>
+
+					<div className="sub-wrapper">
+						<p className='temp-max-min heading-sm'>
+							{`${temp_min.toFixed()}`}&deg;c / {`${temp_max.toFixed()}`}&deg;c
+						</p>
+						<p className='text-lg weather'>{details}</p>
+					</div>
 				</div>
-					<img src={icon}  alt="Clear" className={details}/>
+				<img src={icon}  alt={details} className="weather-icon" />
 			</div>
 		</div>
 	)
