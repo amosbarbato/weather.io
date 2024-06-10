@@ -1,4 +1,5 @@
 import '../styles.scss'
+import { Clock } from './Clock'
 
 
 export const CurrentWeather = ({
@@ -19,6 +20,7 @@ export const CurrentWeather = ({
 			<div className="card-header">
 				<h2 className='heading-md card-title'>{formattedLocalTime}</h2>
 				<p className='text-md heading'>{`${name}, ${country}`}</p>
+				<Clock />
 			</div>
 
 			<div className="wrapper">
