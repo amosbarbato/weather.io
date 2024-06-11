@@ -23,16 +23,16 @@
 	--ff-nunito-sans: 'Nunito', sans-serif;
 
 	/* font-size */
-	--heading-hg: 6rem;
-	--heading-xl: 4.5rem;
-	--heading-lg: 2rem;
-	--heading-md: 1.2rem;
-	--heading-sm: 1rem;
-	--heading-xs: 0.8rem;
-	--text-lg: 1.2rem;
-	--text-md: 1rem;
-	--text-sm: 0.8rem;
-	--text-xs: 0.7rem;
+	--heading-hg: 32px;
+	--heading-xl: 48px;
+	--heading-lg: 32px;
+	--heading-md: 20px;
+	--heading-sm: 16px;
+	--heading-xs: 14px;
+	--text-lg: 20px;
+	--text-md: 16px;
+	--text-sm: 14px;
+	--text-xs: 12px;
 
 	/* font-weight */
 	--weight-regular: 400;
@@ -63,6 +63,7 @@ ul {
 	margin: 0;
 	padding: 0;
 }
+
 
 // common
 
@@ -149,15 +150,15 @@ main {
 	.header {
 		display: flex;
 		justify-content: space-between;
-		gap: 1rem;
+		gap: 12px;
 		margin-block-end: 1.5rem;
 	
 		a.logo {
-			height: 64px;
+			height: 56px;
 	
 			img {
 				background-color: var(--gray-600);
-				padding: 12px;
+				padding: 13px;
 				border-radius: var(--radius-8);
 				transition: var(--transition-short);
 	
@@ -174,8 +175,7 @@ main {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	gap: 0.5rem;
-	margin-top: 2rem;
+	gap: 12px;
 
 	input {
 		padding: 1.2rem;
@@ -185,8 +185,9 @@ main {
 		background-color: var(--gray-600);
 		outline: none;
 		border: none;
-		color: var(--gray-400);
+		color: var(--white);
 		font-size: var(--label-2);
+		font-family: var(--ff-nunito-sans);
 
 		&::placeholder {
 			color: var(--gray-400);
@@ -275,6 +276,8 @@ main {
 
 		.card-header {
 			padding: 20px;
+			display: flex;
+			justify-content: space-between;
 
 			.card-title {
 				margin: 0;
@@ -285,6 +288,10 @@ main {
 			margin-block-start: 4px;
 		}
 	}
+}
+
+.clock {
+	h1 { margin: 0;}
 }
 
 .wrapper {
@@ -483,13 +490,17 @@ main {
 		grid-template-columns: 1fr 1fr;
 	}
 
+	.current-weather > .card-lg {
+		gap: 170px;
+	}
+
 	.forecast {
 		gap: 2.5rem;
 		padding-inline: 23px;
 		margin: 10px 20px;
 
 		.forecast-item {
-			gap: 12px;
+			gap: 0;
 		}
 	}
 

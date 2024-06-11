@@ -21,7 +21,7 @@ export const Clock = () => {
   };
 
 	return (
-		<div>
+		<div className="clock">
       <h1>{formatTime(time)}</h1>
     </div>
 	)
