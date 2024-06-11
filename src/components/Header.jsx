@@ -21,7 +21,7 @@ export const Header = ({ setQuery }) => {
 
 	return (
 		<div className="header">
-			<a href="#" className='logo'>
+			<a href="/" className='logo'>
 				<img src="../logo.svg" alt="" width={30} height={30}/>
 			</a>
 			
