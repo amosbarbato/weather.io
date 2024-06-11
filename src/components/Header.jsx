@@ -10,14 +10,14 @@ export const Header = ({ setQuery }) => {
 		if (city !== "") setQuery({ q: city })
 	}
 
-	const handleLocationClick = () => {
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition((position) => {
-				const {latitude, longitude} = position.coords
-				setQuery({lat: latitude, lon: longitude})
-			})
-		}
-	}
+	// const handleLocationClick = () => {
+	// 	if (navigator.geolocation) {
+	// 		navigator.geolocation.getCurrentPosition((position) => {
+	// 			const {latitude, longitude} = position.coords
+	// 			setQuery({lat: latitude, lon: longitude})
+	// 		})
+	// 	}
+	// }
 
 	return (
 		<div className="header">

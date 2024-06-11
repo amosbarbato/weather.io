@@ -53,7 +53,7 @@ export const Highlight = ({
 					<li className="card-item">
 						<div className="label-item">
 							<Moon width={24} height={24}/>
-							<p className="heading-sm">Sunset</p>
+							<p className="title-1">Sunset</p>
 						</div>
 						<p className="heading-md title-1">{sunset}</p>
 					</li>					
