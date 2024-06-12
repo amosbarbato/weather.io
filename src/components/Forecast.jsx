@@ -1,12 +1,6 @@
 import '../styles.scss'
 
-export const Forecast = ({
-	data,
-	weather: {
-		temp_min,
-		temp_max
-	}
-}) => {
+export const Forecast = ({ data }) => {
 
 	return (
 		<div className="card">
@@ -19,8 +13,8 @@ export const Forecast = ({
 						<img src={d.icon} alt="" />
 
 						<div className="temp-max-min">
-							<p className="heading-sm">{`${temp_min.toFixed()}`}&deg;c</p>
-							<p className="heading-sm max">{`${temp_max.toFixed()}`}&deg;c</p>
+							<p className="heading-sm">{`${d.temp.toFixed()}`}&deg;c</p>
+							<p className="heading-sm max">{`${d.feels_like.toFixed()}`}&deg;c</p>
 						</div>
 					</li>
 				))}

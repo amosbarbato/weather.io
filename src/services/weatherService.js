@@ -15,11 +15,20 @@ const getWeatherData = async (infoType, searchParams) => {
 const iconUrlFromCode = (icon) => 
 	`../weather-icons/${icon}.png`;
 
+const bgUrlFromCode = (icon) => {
+	return `../weather-bg/${icon}.png`;
+}
 
 const formatToLocalTime = (
 	secs, 
 	offset, 
 	format = "cccc, dd LLL yyyy"
+) => DateTime.fromSeconds (secs + offset, { zone: "utc" }).toFormat(format)
+
+const formatTime = (
+	secs, 
+	offset, 
+	format = "HH:mm"
 ) => DateTime.fromSeconds (secs + offset, { zone: "utc" }).toFormat(format)
 
 const formatCurrent = (data) => {
@@ -34,8 +43,9 @@ const formatCurrent = (data) => {
 		timezone,
 	} = data;
 
-	const { description: details, icon, } = weather[0];
+	const { description: details, icon } = weather[0];
 	const formattedLocalTime = formatToLocalTime(dt, timezone)
+	const formattedTime = formatTime(dt, timezone)
 
 	return {
 		feels_like,
@@ -50,7 +60,9 @@ const formatCurrent = (data) => {
 		speed,
 		details,
 		icon: iconUrlFromCode(icon),
+		bg: bgUrlFromCode(icon),
 		formattedLocalTime,
+		formattedTime,
 		dt,
 		timezone,
 		lat,
@@ -59,29 +71,19 @@ const formatCurrent = (data) => {
 }
 
 const formatForecastWeather = (secs, offset, data) => {
-	//hourly
-	const hourly = data
-		.filter((f) => f.dt > secs)
-		.map((f) => ({
-			temp: f.main.temp,
-			title: formatToLocalTime(f.dt, offset, "hh:mm a"),
-			icon: iconUrlFromCode(f.weather[0].icon),
-			date: f.dt_txt,
-		}))
-		.slice(0,5)
-
 		//daily
 		const daily = data
-		.filter((f) => f.dt_txt.slice(-8) === "00:00:00")
+		.filter((f) => f.dt_txt.slice(-8) === "09:00:00")
 		.map((f) => ({
 			temp: f.main.temp,
+			feels_like: f.main.feels_like,
 			title: formatToLocalTime(f.dt, offset, "ccc"),
 			icon: iconUrlFromCode(f.weather[0].icon),
-			date: f.dt_txt,
-		}));
-
-		return { hourly, daily }
+			date: f.dt_txt[0],
+		}))
+		return { daily }
 }
+
 
 const getFormattedWeatherData = async (searchParams) => {
 	const formatCurrentWeather = await getWeatherData(

@@ -251,22 +251,12 @@ main {
 			box-shadow: none;
 		}
 	}
-
-	
 }
 
-
-
-.bg-cold {
-	background-image: linear-gradient(#0891b2, #1d4ed8);
-}
-
-.bg-hot {
-	background-image: linear-gradient(#ca8a04, #c2410c);
-}
 
 .current-weather {
 	border-radius: var(--radius-8);
+	background-size: cover;
 
 	.card-lg {
 		display: flex;

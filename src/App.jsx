@@ -32,13 +32,8 @@ const App = () => {
 		getWeather()
 	}, [query, units])
 
-	const formatBackground = () => {
-		if (!weather) return "bg-cold"
-		const threshold = units === "metric" ? 20 : 60
-		if (weather.temp <= threshold) return "bg-cold"
-		return "bg-hot"
-	}
 
+	
 	return (
 		<div className="App">
 				<main>
@@ -50,14 +45,13 @@ const App = () => {
 								<div className="content-left card">
 									<Header setQuery={setQuery} />		
 											
-									<section className={` section current-weather ${formatBackground()} `}>
-										<CurrentWeather weather={weather} />
-									</section>
+									<CurrentWeather weather={weather} />
 								</div>
 
 								<div className="content-right container">
 									<Highlight weather={weather} />
-									<Forecast weather={weather} data={weather.daily} /> 
+
+									<Forecast data={weather.daily} /> 
 								</div>
 
 
