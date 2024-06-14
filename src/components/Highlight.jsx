@@ -19,7 +19,9 @@ export const Highlight = ({
 	return (
 		<div className="card">
 			<div className="wrapper">
+				
 				<ul className="highlight">
+					<h4>Detalhes do clima hoje</h4>
 					<li className="highlight__item">
 						<div className="highlight__item__label">
 							<ThermometerSimple width={24} height={24}/>

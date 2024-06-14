@@ -3,6 +3,16 @@
 .highlight {
 	padding-inline: 6px;
 
+	h4 {
+		font-weight: root.$regular;
+		margin-block: 10px 20px;
+		color: root.$gray-400;
+
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+
 	&__item {
 		display: flex;
 		align-items: center;
