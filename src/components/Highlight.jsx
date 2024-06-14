@@ -1,5 +1,3 @@
-import '../styles.scss'
-
 import { 
 	Sun, 
 	Moon,
@@ -22,40 +20,40 @@ export const Highlight = ({
 		<div className="card">
 			<div className="wrapper">
 				<ul className="highlight">
-					<li className="card-item">
-						<div className="label-item">
+					<li className="highlight__item">
+						<div className="highlight__item__label">
 							<ThermometerSimple width={24} height={24}/>
-							<p className="heading-sm">Feels Like</p>
+							<p className="bold">Feels Like</p>
 						</div>
-						<p className="heading-md title-1">{`${feels_like.toFixed()}`}&deg;c</p>
+						<h5 className="bold">{`${feels_like.toFixed()}`}&deg;c</h5>
 					</li>
-					<li className="card-item">
-						<div className="label-item">
+					<li className="highlight__item">
+						<div className="highlight__item__label">
 							<Wind width={24} height={24} />
-							<p className="heading-sm">Speed</p>
+							<p className="bold">Speed</p>
 						</div>
-						<p className="heading-md title-1">{`${speed.toFixed()}`} km/h</p>
+						<h5 className="bold">{`${speed.toFixed()}`} km/h</h5>
 					</li>
-					<li className="card-item">
-						<div className="label-item">
+					<li className="highlight__item">
+						<div className="highlight__item__label">
 							<Drop width={24} height={24}/>
-							<p className="heading-sm">Humidity</p>
+							<p className="bold">Humidity</p>
 						</div>
-						<p className="heading-md title-1">{`${humidity.toFixed()}`}%</p>
+						<h5 className="bold">{`${humidity.toFixed()}`}%</h5>
 					</li>
-					<li className="card-item">
-						<div className="label-item">
+					<li className="highlight__item">
+						<div className="highlight__item__label">
 							<Sun width={24} height={24}/>
-							<p className="heading-sm">Sunrise</p>
+							<p className="bold">Sunrise</p>
 						</div>
-						<p className="heading-md title-1">{sunrise}</p>
+						<h5 className="bold">{sunrise}</h5>
 					</li>
-					<li className="card-item">
-						<div className="label-item">
+					<li className="highlight__item">
+						<div className="highlight__item__label">
 							<Moon width={24} height={24}/>
-							<p className="heading-sm">Sunset</p>
+							<p className="bold">Sunset</p>
 						</div>
-						<p className="heading-md title-1">{sunset}</p>
+						<h5 className="bold">{sunset}</h5>
 					</li>					
 				</ul>
 			</div>

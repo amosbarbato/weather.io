@@ -1,5 +1,3 @@
-import '../styles.scss'
-
 
 export const CurrentWeather = ({
 	weather: {
@@ -19,30 +17,38 @@ export const CurrentWeather = ({
 	return (
 		<>
 
-			<section className='section current-weather' style={{ backgroundImage: `url(${bg})` }}>
-				<div className="card-lg current-weather-card" >
-					<div className="card-header">
-						<div className='local'>
-							<h2 className='heading-md card-title'>{formattedLocalTime}</h2>
-							<p className='text-md heading'>{`${name}, ${country}`}</p>
+			<section 
+				className='currentWeather' 
+				style={{ backgroundImage: `url(${bg})` }}
+			>
+				<div className="currentWeather__card" >
+					<div className="currentWeather__card__header">
+
+						<div className='local-date'>
+							<h4 className="bold">{`${name}, ${country}`}</h4>
+							<p>{formattedLocalTime}</p>
 						</div>
-						<div className="clock">
-							<h1>{formattedTime}</h1>
-						</div>
+
+						<p className="localTime bold">{formattedTime}</p>
 					</div>
 
-					<div className="wrapper">
-						<div className="weather">
-							<h1 className='heading-xl weather'>{`${temp.toFixed()}`}&deg;c</h1>
+					<div className="currentWeather__card__wrapper">
 
-							<div className="sub-wrapper">
-								<p className='temp-max-min heading-sm'>
-									{`${temp_min.toFixed()}`}&deg;c / {`${temp_max.toFixed()}`}&deg;c
-								</p>
-								<p className='text-lg weather'>{details}</p>
+						<div className="weather">
+							<h1 className='extra'>{`${temp.toFixed()}`}&deg;c</h1>
+
+							<div className="weather__sub">
+								<p className='bold'>{`${temp_min.toFixed()}`}&deg;c / {`${temp_max.toFixed()}`}&deg;c</p>
+								<span>•</span>
+								<p>{details}</p>
 							</div>
+							
 						</div>
-						<img src={icon}  alt={details} className="weather-icon" />
+
+						<div className="weather-icon">
+							<img src={icon} alt={details} />
+						</div>
+
 					</div>
 				</div>
 			</section>
