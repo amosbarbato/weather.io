@@ -1,0 +1,38 @@
+@use 'root';
+
+.highlight {
+	padding-inline: 6px;
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid root.$gray-700;
+		padding-block: 1rem;
+
+		&:first-child {
+			padding-block-start: 0.5rem;
+		}
+
+		&:last-child {
+			border: none;
+			padding-block-end: 0.5rem;
+		}
+
+		&__label {
+			display: flex;
+			align-items: center;
+			color: root.$gray-500;
+			gap: 12px;
+
+			p {
+				color: root.$gray-200;
+			}
+		}
+
+		h5 {
+			color: root.$gray-100;
+			font-size: 18px;
+		}
+	}
+}

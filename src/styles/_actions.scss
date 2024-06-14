@@ -1,0 +1,69 @@
+@use 'root';
+
+.actions {
+	display: flex;
+	gap: 0.5rem;
+	margin-block-end: 12px;
+
+	@media (min-width: 1200px) {
+		gap: 12px;
+		margin-block-end: 1rem;
+	}
+	
+	&__home {
+		height: 56px;
+		background-color: root.$gray-600;
+		padding: 13px;
+		border-radius: root.$radius-8;
+		transition: root.$transition-short;
+
+		&:hover {
+			background-color: root.$gray-500;
+			transition: root.$transition-short;
+		}
+	}
+
+	&__search {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		gap: 0.5rem;
+
+		@media (min-width: 1200px) {
+			gap: 12px;
+		}
+
+		&__field {
+			width: 100%;
+			padding: 17px 20px;
+			border-radius: root.$radius-8;
+			border: none;
+			outline: none;
+			color: root.$white;
+			font-family: 'Nunito', sans-serif;
+			background-color: root.$gray-600;
+
+			&::placeholder {
+				color: root.$gray-400;
+			}
+		}
+
+		&__button {
+			padding-inline: 14px;
+			border-radius: root.$radius-8;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			background-color: root.$gray-600;
+
+			@media (min-width: 1200px) {
+				padding-inline: 16px;
+			}
+
+			&:hover {
+				background-color: root.$gray-500;
+				transition: root.$transition-short;
+			}
+		}
+	}
+}

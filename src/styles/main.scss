@@ -1,0 +1,94 @@
+@use 'root';
+@use 'actions';
+@use 'currentWeather';
+@use 'highlight';
+@use 'forecast';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+	color: root.$white;
+	background-color: root.$gray-900;
+}
+
+ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+@mixin heading($heading-size) {
+	font-size: $heading-size;
+}
+
+@mixin text($text-size) {
+	font-size: $text-size;
+	font-weight: root.$regular;
+	line-height: 140%;
+}
+
+
+.extra {
+	font-weight: root.$extraBold;
+	line-height: 120%;
+}
+
+.bold {
+	font-weight: root.$bold;
+	line-height: 140%
+}
+
+p {
+	@include text(16px)
+}
+
+input {
+	@include text(16px);
+}
+
+
+main {
+	padding: 0.5rem;
+
+	@media (min-width: 1200px) {
+		padding: 1.5rem;
+	}
+}
+
+.container {
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 0.5rem;
+	height: 100%;
+	overflow-y: auto;
+
+	@media (min-width: 1200px) {
+		gap: 1rem;
+	}
+
+	.card {
+		border-radius: root.$radius-12;
+		background-color: root.$gray-800;
+		padding: 12px;
+
+		@media (min-width: 1200px) {
+			padding: 1rem;
+		}
+	}
+}
+
+article.container {
+		@media (min-width: 1200px) {
+			grid-template-columns: 1fr 1fr;
+		}
+}

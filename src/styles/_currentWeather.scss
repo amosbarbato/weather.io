@@ -1,0 +1,98 @@
+@use 'root';
+
+.currentWeather {
+	border-radius: root.$radius-8;
+	background-size: cover;
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 83px;
+
+		@media (min-width: 1200px) {
+			gap: 86px;
+		}
+
+		&__header {
+			padding: 20px;
+			display: flex;
+			justify-content: space-between;
+
+			@media (min-width: 1200px) {
+				padding: 2rem;
+			}
+
+			h4 {
+				font-size: root.$heading-md;
+			}
+		}
+
+		&__wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+
+			.weather {
+				margin-inline-start: 20px;
+				margin-block-end: 20px;
+
+				@media (min-width: 1200px) {
+					margin-inline-start: 2rem;
+					margin-block-end: 2rem;
+				}
+
+				h1 {
+					font-size: root.$heading-xl;
+
+					@media (min-width: 1200px) {
+						font-size: root.$heading-hg;
+					}
+				}
+
+				&__sub {
+					margin-block-start: 0.5rem;
+
+					@media (min-width: 1200px) {
+						display: flex;
+						gap: 12px;
+					}
+
+					p {
+						text-transform: capitalize;
+						
+						@media (min-width: 1200px) {
+							font-size: root.$heading-md;
+						}
+
+						&:first-child {
+							margin-block-end: 4px;
+							text-transform: lowercase;
+
+							@media (min-width: 1200px) {
+								margin-block-end: 0;
+							}
+						}
+					}
+
+					span {
+						display: none;
+
+						@media (min-width: 1200px) {
+							display: block;
+							opacity: 0.4;
+						}
+					}
+				}
+			}
+
+			.weather-icon {
+				margin-inline-end: 0;
+
+				@media (min-width: 1200px) {
+					margin-inline-end: 30px;
+				}
+			}
+		}
+	}
+}

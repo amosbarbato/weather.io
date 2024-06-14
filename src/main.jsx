@@ -1,7 +1,7 @@
 
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import './styles.scss'
+import './styles/main.scss'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

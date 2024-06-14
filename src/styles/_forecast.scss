@@ -1,0 +1,62 @@
+@use 'root';
+
+.forecast {
+	display: flex;
+	justify-content: space-between;
+	margin-inline: 4px;
+
+	@media (min-width: 768px) {
+		margin-inline: 2.5rem;
+	}
+
+	@media (min-width: 1200px) {
+		margin-inline: 2rem;
+	}
+
+	&__item {
+		margin-block: 1rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		h6 {
+			font-size: 16px;
+			color: root.$gray-200;
+		}
+
+		.full {
+			display: none;
+			
+			@media (min-width: 768px) {
+				display: block;
+			}
+		}
+
+		.semi {
+			display: block;
+
+			@media (min-width: 768px) {
+				display: none;
+			}
+		}
+
+		.forecast-icon {
+			width: 60px;
+			margin-block: 8px;
+
+			@media (min-width: 1200px) {
+				margin-block: 0;
+			}
+		}
+
+		&__temp {
+			p {
+				color: root.$gray-400;
+
+				span {
+					color: root.$gray-100;
+				}
+			}
+		}
+	}
+}
