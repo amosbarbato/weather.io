@@ -55,8 +55,8 @@ const formatCurrent = (data) => {
 		temp_max,
 		name,
 		country,
-		sunrise: formatToLocalTime(sunrise, timezone, 'hh:mm a'),
-		sunset: formatToLocalTime(sunset, timezone, 'hh:mm a'),		
+		sunrise: formatToLocalTime(sunrise, timezone, 'HH:mm'),
+		sunset: formatToLocalTime(sunset, timezone, 'HH:mm'),		
 		speed,
 		details,
 		icon: iconUrlFromCode(icon),
@@ -78,6 +78,7 @@ const formatForecastWeather = (secs, offset, data) => {
 			temp: f.main.temp,
 			feels_like: f.main.feels_like,
 			title: formatToLocalTime(f.dt, offset, "ccc"),
+			titleFull: formatToLocalTime(f.dt, offset, "cccc"),
 			icon: iconUrlFromCode(f.weather[0].icon),
 			date: f.dt_txt[0],
 		}))
