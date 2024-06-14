@@ -21,7 +21,7 @@ export const Highlight = ({
 			<div className="wrapper">
 				
 				<ul className="highlight">
-					<h4>Detalhes do clima hoje</h4>
+					<h4>Today's weather highlights</h4>
 					<li className="highlight__item">
 						<div className="highlight__item__label">
 							<ThermometerSimple width={24} height={24}/>
