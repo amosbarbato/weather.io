@@ -36,5 +36,5 @@ npm install
 npm run dev
 ```
 
-6. Pronto! Estarão disponíveis no localhost padrão ✅
+6. Pronto! O site estará disponível no localhost padrão ✅
 
